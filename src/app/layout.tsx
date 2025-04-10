@@ -10,6 +10,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { TRPCReactProvider } from "~/trpc/react";
+import NavBar from "./_components/NavBar";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -27,16 +28,17 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ClerkProvider>
+      <NavBar />
       <html lang="en" className={`${geist.variable}`}>
         <body>
           <header className="flex h-16 items-center justify-end gap-4 p-4">
-            <SignedOut>
+            {/* <SignedOut>
               <SignInButton />
               <SignUpButton />
             </SignedOut>
             <SignedIn>
               <UserButton />
-            </SignedIn>
+            </SignedIn> */}
           </header>
           <TRPCReactProvider>{children}</TRPCReactProvider>
         </body>
