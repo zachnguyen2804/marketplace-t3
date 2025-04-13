@@ -12,8 +12,8 @@ type Inputs = {
 
 const SellAnItem = () => {
   const router = useRouter();
-  const { register, handleSubmit } = useForm<Inputs>();
   const createListing = api.listings.create.useMutation();
+  const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     createListing
       .mutateAsync({

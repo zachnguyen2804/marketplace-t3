@@ -9,8 +9,8 @@ const NavBar = () => {
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-900">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        <a
-          href="https://flowbite.com/"
+        <Link
+          href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
@@ -19,9 +19,9 @@ const NavBar = () => {
             alt="Flowbite Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            Marketplace
           </span>
-        </a>
+        </Link>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -54,19 +54,30 @@ const NavBar = () => {
                 className="block rounded-sm bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700 dark:text-white md:dark:text-blue-500"
                 aria-current="page"
               >
-                Home
+                Browse
               </Link>
             </li>
             {user.isSignedIn && (
-              <li>
-                <Link
-                  href="/sell-an-item"
-                  className="block rounded-sm bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700 dark:text-white md:dark:text-blue-500"
-                  aria-current="page"
-                >
-                  Sell an Item
-                </Link>
-              </li>
+              <>
+                <li>
+                  <Link
+                    href="/offers"
+                    className="block rounded-sm bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700 dark:text-white md:dark:text-blue-500"
+                    aria-current="page"
+                  >
+                    Offers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/sell-an-item"
+                    className="block rounded-sm bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700 dark:text-white md:dark:text-blue-500"
+                    aria-current="page"
+                  >
+                    Sell an Item
+                  </Link>
+                </li>
+              </>
             )}
             {!user.isSignedIn && (
               <li>
